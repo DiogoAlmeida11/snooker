@@ -4,14 +4,15 @@ import Dashboard from '@/views/Dashboard.vue'
 import Calendar from '@/views/Calendar.vue'
 import Players from '@/views/Players.vue'
 import News from '@/views/News.vue'
-import Settings from '@/views/Settings.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
@@ -35,10 +36,15 @@ const router = createRouter({
       name: 'news',
       component: News
     },
-    {
-      path: '/settings',
-      name: 'settings',
-      component: Settings
+    { 
+      path: '/', 
+      name: 'login', 
+      component: LoginView 
+    },
+    { 
+      path: '/register', 
+      name: 'register', 
+      component: RegisterView 
     },
   ]
 })

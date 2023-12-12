@@ -1,24 +1,53 @@
 <template>
   <nav class="navbar">
     <div class="navbar-container">
-      <router-link to="/" class="router-link img-link">
-        <img src="../assets/transferir-removebg-preview.png" class="img">
+      <router-link :to="{ name: 'home' }" class="img-link">
+        <img src="../assets/transferir-removebg-preview.png" class="img" />
       </router-link>
       <div class="menu-links">
-        <router-link to="/dashboard" class="router-link">Dashboard</router-link> |
-        <router-link to="/players" class="router-link">Jogadores</router-link> |
-        <router-link to="/news" class="router-link">Noticias</router-link> |
-        <router-link to="/calendar" class="router-link">Calendário</router-link>
+        <router-link v-if="isUser" :to="{ name: 'dashboard' }" class="router-link">Dashboard</router-link>
+        <router-link v-if="isUser" :to="{ name: 'players' }" class="router-link">Jogadores</router-link>
+        <router-link :to="{ name: 'news' }" class="router-link">Noticias</router-link>
+        <router-link v-if="isUser" :to="{ name: 'calendar' }" class="router-link">Calendário</router-link>
+        <router-link v-if="!isUser" :to="{ name: 'login' }" class="router-link">Login</router-link>
       </div>
-      <router-link to="/settings" class="router-link settings-link">Configurações</router-link>
+      <div class="user-info">
+        <span v-if="isUser" class="user-greeting">
+          Olá, <span class="username">{{ name }}</span>
+          <button @click="logout" class="logout-btn">Logout</button>
+        </span>
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
+import { useUserStore } from "@/stores/user";
+
 export default {
-  name: 'NavBar'
-}
+  data() {
+    return {
+      store: useUserStore(),
+    };
+  },
+  computed: {
+    name() {
+      return this.store.getUser?.username;
+    },
+    isUser() {
+      return this.store.isUser;
+    },
+    isAdmin() {
+      return this.store.getUser?.type == "admin";
+    },
+  },
+  methods: {
+    logout() {
+      this.store.logout();
+      this.$router.push({ name: "home" });
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -41,8 +70,8 @@ export default {
 
 .menu-links {
   display: flex;
-  gap: 20px; 
-  margin-left: 476px;
+  gap: 20px;
+  margin-left: 20px; 
 }
 
 .router-link {
@@ -57,11 +86,30 @@ export default {
 }
 
 .img-link {
-  margin-left: 20px; 
+  margin-left: 20px;
 }
 
-.settings-link {
-  margin-left: auto; 
+.user-info {
   margin-right: 20px; 
+}
+
+.user-greeting {
+  color: white;
+}
+
+.username {
+  font-weight: bold;
+}
+
+.logout-btn {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
 }
 </style>
