@@ -103,3 +103,32 @@ export const usePlayersStore = defineStore('players', {
     },
   },
 });
+
+// tarefa filipe para amanhã
+// - flag do botao de sort, pode ser por Ranking ou A-Z
+// - impossível de ver as paginas de dashboard e players quando nao se está logado 
+
+/* import * as api from '../api/api'
+
+const PLAYER_API_BASE_URL = 'http://localhost:4000'
+
+export const usePlayersStore = defineStore('players', {
+  state: () => ({
+    players: [],
+  }),
+  getters: {
+    getPlayers: (state) => state.players,
+    getPlayer: (state)=> (id)=> state.players.find(player=>players.id==id)
+  },
+    actions: {
+      async fetchPlayers(){
+        try {
+          const result = await api.get(PLAYER_API_BASE_URL, 'players')
+          this.players = result.data
+        } catch (error) {
+          throw error
+        }
+      },
+  }
+});
+ */
