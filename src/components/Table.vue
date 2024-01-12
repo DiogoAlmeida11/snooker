@@ -8,6 +8,8 @@
             <th>Jogadores</th>
             <th>Data</th>
             <th>Hora</th>
+            <th>Ações</th>
+
           </tr>
         </thead>
         <tbody>
@@ -17,6 +19,11 @@
             <td>{{ game.jogadores }}</td>
             <td>{{ game.data }}</td>
             <td>{{ game.hora }}</td>
+            <td>
+            <router-link :to="{ name: 'gameDetails', params: { id: game.id.toString() } }">
+              <button class="btn btn-primary btn-sm">Detalhes</button>
+            </router-link>
+          </td>
           </tr>
         </tbody>
       </table>
