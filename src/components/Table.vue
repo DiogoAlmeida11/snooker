@@ -1,5 +1,6 @@
 <template>
     <div class="dashboard">
+      
       <table class="table table-bordered">
         <thead class="bg-primary text-white">
           <tr>
@@ -16,12 +17,12 @@
           <tr v-for="game in games" :key="game.id" class="hoverable-row">
             <td>{{ game.titulo }}</td>
             <td>{{ game.descricao }}</td>
-            <td>{{ game.jogadores }}</td>
+            <td>{{ game.jogador1 }} vs {{ game.jogador2 }}</td>
             <td>{{ game.data }}</td>
             <td>{{ game.hora }}</td>
             <td>
             <router-link :to="{ name: 'gameDetails', params: { id: game.id.toString() } }">
-              <button class="btn btn-primary btn-sm">Detalhes</button>
+              <button class="btn btn-primary btn-sm" @click="this.selectGame(game.id)">Detalhes</button>
             </router-link>
           </td>
           </tr>
@@ -34,17 +35,28 @@
   import { defineComponent } from 'vue';
   import { useGamesStore } from '../stores/games';
   
+  
   export default defineComponent({
     data() {
       return {
         games: [],
       };
     },
+    
     async created() {
+    const gamesStore = useGamesStore();
+    this.games = await gamesStore.allGames;
+  },
+  methods: {
+    // Método para chamar a ação setSelectedGame
+    selectGame(id) {
       const gamesStore = useGamesStore();
-      this.games = await gamesStore.allGames;
+      gamesStore.setSelectedGame(id);
     },
-  });
+   
+    
+  }});
+ 
   </script>
   
   <style scoped>

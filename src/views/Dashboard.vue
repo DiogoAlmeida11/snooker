@@ -31,6 +31,6 @@ export default {
 }
 
 .dashboard {
-  margin-top: 10px; /* Ajuste a distância conforme necessário */
+  margin-top: 10px; 
 }
 </style>
