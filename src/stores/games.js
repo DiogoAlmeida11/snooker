@@ -143,7 +143,7 @@ export const useGamesStore = defineStore("games", {
   }),
   getters: {
     allGames: (state) => state.games,
-    // Renomeie o getter para evitar conflito de nomes
+    
     getSelectedGame: (state) => state.selectedGame,
     gameById: (state) => (id) => {
       return state.games.find((game) => game.id.toString() === id);

@@ -71,26 +71,107 @@ export default {
       return player ? player.Photo : "";
     },
     createCharts() {
-      this.createBallsChart("player1Chart", "Neil", [
-        { name: "Vermelho", value: "red", count: 60 },
-        { name: "Azul", value: "blue", count: 10 },
-        { name: "Verde", value: "green", count: 11 },
-        { name: "Preto", value: "black", count: 18 },
-        { name: "Rosa", value: "pink", count: 9 },
-        { name: "Amarelo", value: "yellow", count: 10 },
-        { name: "Castanho", value: "brown", count: 15 },
-      ]);
+  const selectedGame = useGamesStore().getSelectedGame;
+  if (selectedGame) {
+    const playerOneBalls = {
+      vermelha: selectedGame.bolavermelhaPlayer1,
+      azul: selectedGame.bolaazulPlayer1,
+      verde: selectedGame.bolaverdePlayer1,
+      preta: selectedGame.bolapretaPlayer1,
+      rosa: selectedGame.bolarosaPlayer1,
+      amarela: selectedGame.bolaamarelaPlayer1,
+      castanha: selectedGame.bolacastanhaPlayer1,
+    };
+    const playerTwoBalls = {
+      vermelha: selectedGame.bolavermelhaPlayer2,
+      azul: selectedGame.bolaazulPlayer2,
+      verde: selectedGame.bolaverdePlayer2,
+      preta: selectedGame.bolapretaPlayer2,
+      rosa: selectedGame.bolarosaPlayer2,
+      amarela: selectedGame.bolaamarelaPlayer2,
+      castanha: selectedGame.bolacastanhaPlayer2,
+    };
 
-      this.createBallsChart("player2Chart", "Ronnie", [
-        { name: "Vermelho", value: "red", count: 27 },
-        { name: "Azul", value: "blue", count: 7 },
-        { name: "Verde", value: "green", count: 2 },
-        { name: "Preto", value: "black", count: 5 },
-        { name: "Rosa", value: "pink", count: 1 },
-        { name: "Amarelo", value: "yellow", count: 2 },
-        { name: "Castanho", value: "brown", count: 2 },
-      ]);
+    this.createBallsChart("player1Chart", this.game.jogador1, [
+      {
+        name: "Vermelho",
+        value: "red",
+        count: playerTwoBalls.vermelha,
+      },
+      {
+        name: "Azul",
+        value: "blue",
+        count: playerOneBalls.azul,
+      },
+      {
+        name: "Verde",
+        value: "green",
+        count: playerOneBalls.verde,
+      },
+      {
+        name: "Preto",
+        value: "black",
+        count: playerOneBalls.preta,
+      },
+      {
+        name: "Rosa",
+        value: "pink",
+        count: playerOneBalls.rosa,
+      },
+      {
+        name: "Amarelo",
+        value: "yellow",
+        count: playerOneBalls.amarela,
+      },
+      {
+        name: "Castanho",
+        value: "brown",
+        count: playerOneBalls.castanha,
+      },
+    ]);
+    this.createBallsChart("player2Chart", this.game.jogador2, [
+      {
+        name: "Vermelho",
+        value: "red",
+        count: playerTwoBalls.vermelha,
+      },
+      {
+        name: "Azul",
+        value: "blue",
+        count: playerTwoBalls.azul,
+      },
+      {
+        name: "Verde",
+        value: "green",
+        count: playerTwoBalls.verde,
+      },
+      {
+        name: "Preto",
+        value: "black",
+        count: playerTwoBalls.preta,
+      },
+      {
+        name: "Rosa",
+        value: "pink",
+        count: playerTwoBalls.rosa,
+      },
+      {
+        name: "Amarelo",
+        value: "yellow",
+        count: playerTwoBalls.amarela,
+      },
+      {
+        name: "Castanho",
+        value: "brown",
+        count: playerTwoBalls.castanha,
+      },
+    ]);
+  }
+
+
+ 
     },
+  
     createBallsChart(canvasId, playerName, colors) {
       const canvas = this.$refs[canvasId];
       if (!canvas) {
