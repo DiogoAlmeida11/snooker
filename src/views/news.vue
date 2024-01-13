@@ -1,31 +1,58 @@
 <template>
   <div>
     <h1>Notícias de Snooker</h1>
-    <p>Notícias de snooker, sobre jogadores, torneios etc...</p>
+
+    <input v-model="searchQuery" placeholder="Pesquisar por título..." class="search-input" />
 
     <div class="news-list">
-      <div v-for="(newsItem, index) in allNews" :key="newsItem.titulo" class="news-card">
-        <img :src="newsItem.imagem" alt="Imagem da Notícia" class="news-image" />
-        <div class="news-details">
-          <h2>{{ newsItem.titulo }}</h2>
-          <p>{{ newsItem.descricao }}</p>
-          <p class="news-date">{{ newsItem.data }}</p>
+      <div v-for="(group, index) in chunkArray(flatNews, 3)" :key="index" class="news-row">
+        <div v-for="(item, innerIndex) in group" :key="innerIndex" class="news-card">
+          <router-link :to="`/news/${item.id}`" class="news-link">
+            <img :src="item.imagem" alt="Imagem da Notícia" class="news-image" />
+            <div class="news-details">
+              <h2>{{ item.titulo }}</h2>
+              <p>{{ item.descricao }}</p>
+              <p class="news-date">{{ item.data }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </div>
+
+    <!-- Roteiro de exibição da página de detalhes -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import { usePlayersStore } from '@/stores/news';
+import { useNewsStore } from '@/stores/news';
+import { ref, computed } from 'vue';
 
 export default {
   name: 'News',
   setup() {
-    const newsStore = usePlayersStore();
+    const newsStore = useNewsStore();
+
+    const searchQuery = ref('');
+
+    const filteredNews = computed(() => {
+      return newsStore.filteredNewsByTitle(searchQuery.value);
+    });
+
+    const flatNews = computed(() => {
+      return filteredNews.value.flatMap(item => item);
+    });
+
+    const chunkArray = (array, size) => {
+      return Array.from({ length: Math.ceil(array.length / size) }, (v, i) =>
+        array.slice(i * size, i * size + size)
+      );
+    };
 
     return {
-      allNews: newsStore.allNews,
+      searchQuery,
+      flatNews,
+      chunkArray,
     };
   },
 };
@@ -33,11 +60,15 @@ export default {
 
 <style scoped>
 .news-list {
+  max-width: 800px; 
+  margin: 0 auto; 
+  overflow: hidden; 
+}
+
+.news-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* Centraliza os cards */
-  align-items: flex-start; /* Alinha os cards ao topo */
+  justify-content: space-between; 
+  margin-bottom: 20px; 
 }
 
 .news-card {
@@ -49,7 +80,10 @@ export default {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  margin-right: 20px; /* Adicione margem à direita para aumentar o espaço entre os cards na direção horizontal */
 }
 
 .news-card:hover {
@@ -64,7 +98,7 @@ export default {
 
 .news-details {
   padding: 10px;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
 
 .news-details h2 {
@@ -73,5 +107,14 @@ export default {
 
 .news-date {
   color: #555;
+}
+
+.search-input {
+  width: 40%;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 </style>

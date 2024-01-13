@@ -2,13 +2,13 @@
     <div>
       <h1>Detalhes do Jogador</h1>
       <div v-if="player">
-        <h2>{{ player.Name }}</h2>
-        <img :src="player.Photo" alt="Player Photo" />
-        <p>Nacionalidade: {{ player.Nationality }}</p>
-        <p>Idade: {{ player.Idade }}</p>
-        <p>Primeira Temporada como Profissional: {{ player.FirstSeasonAsPro }}</p>
-        <p>Número de Títulos de Ranking: {{ player.NumRankingTitles }}</p>
-        <p>Ranking Atual: {{ player.Ranking }}</p>
+        <h2>{{ player.name }}</h2>
+        <img :src="player.photo" alt="Player Photo" />
+        <p>Nacionalidade: {{ player.nationality }}</p>
+        <p>Idade: {{ player.idade }}</p>
+        <p>Primeira Temporada como Profissional: {{ player.firstSeasonAsPro }}</p>
+        <p>Número de Títulos de Ranking: {{ player.numRankingTitles }}</p>
+        <p>Ranking Atual: {{ player.ranking }}</p>
       </div>
     </div>
   </template>

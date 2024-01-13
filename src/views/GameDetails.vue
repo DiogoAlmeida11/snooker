@@ -60,15 +60,15 @@ export default {
   methods: {
     getPlayerNationality(playerName) {
       const player = usePlayersStore().allPlayers.find(
-        (player) => player.Name === playerName
+        (player) => player.name === playerName
       );
-      return player ? player.Nationality : "";
+      return player ? player.nationality : "";
     },
     getPlayerPhoto(playerName) {
       const player = usePlayersStore().allPlayers.find(
-        (player) => player.Name === playerName
+        (player) => player.name === playerName
       );
-      return player ? player.Photo : "";
+      return player ? player.photo : "";
     },
     createCharts() {
   const selectedGame = useGamesStore().getSelectedGame;

@@ -1,11 +1,11 @@
 <!-- src/components/PlayerCard.vue -->
 <template>
   <div class="player-card" @click="redirectToPlayerPage">
-    <img :src="player.Photo" alt="Player Photo" class="player-image" />
+    <img :src="player.photo" alt="Player Photo" class="player-image" />
     <div class="player-info">
-      <h3>{{ player.Name }}</h3>
-      <p>{{ player.Nationality }}</p>
-      <p>Ranking: {{ player.Ranking }}</p>
+      <h3>{{ player.name }}</h3>
+      <p>{{ player.nationality }}</p>
+      <p>Ranking: {{ player.ranking }}</p>
     </div>
   </div>
 </template>
@@ -23,6 +23,7 @@ export default {
 };
 </script>
 
+<!-- src/components/PlayerCard.vue -->
 <style scoped>
 .player-card {
   border: 1px solid #ddd;
@@ -34,7 +35,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: calc(33.33% - 20px);
+  width: 200px; /* Defina a largura desejada para cada card */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   text-align: center; 
@@ -50,7 +51,8 @@ export default {
 }
 
 .player-info {
-  width: 100%;
+  width: 100px;
+  height: 150px;
   margin-top: 10px; 
 }
 

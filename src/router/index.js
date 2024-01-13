@@ -8,6 +8,7 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import PlayerDetail from '@/views/PlayerDetail.vue'
 import GameDetails from '@/views/GameDetails.vue'
+import NewsDetails from '@/views/NewsDetails.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -58,6 +59,12 @@ const router = createRouter({
       component: GameDetails,
       props: true 
 
+    },
+    {
+      path: '/news/:id',
+      name: 'news-details',
+      component: NewsDetails,
+      props: true,
     },
 
   ]

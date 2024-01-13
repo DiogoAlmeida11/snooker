@@ -9,15 +9,15 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 1)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 1
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 2)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 2
-        ).Photo,
+        ).photo,
         data: "07/12/2023",
         hora: "13:00",
         tempoplayer1: 90,
@@ -42,31 +42,48 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 2)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 2
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 3)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 3
-        ).Photo,
+        ).photo,
         hora: "13:00",
+        data: "07/12/2023",
+        tempoplayer1: 90,
+        tempoplayer2: 70,
+        bolavermelhaPlayer1: 8,
+        bolaazulPlayer1: 1,
+        bolarosaPlayer1:1,
+        bolaamarelaPlayer1: 1,
+        bolaverdePlayer1: 1,
+        bolacastanhaPlayer1: 1,
+        bolapretaPlayer1: 1,
+        bolavermelhaPlayer2: 3,
+        bolaazulPlayer2: 1,
+        bolarosaPlayer2:1,
+        bolaamarelaPlayer2: 1,
+        bolaverdePlayer2: 5,
+        bolacastanhaPlayer2: 1,
+        bolapretaPlayer2: 1,
       },
       {
         id: 3,
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 3)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 3
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 4)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 4
-        ).Photo,
+        ).photo,
         data: "07/12/2023",
         hora: "13:00",
       },
@@ -75,15 +92,15 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 4)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 4
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 5)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 5
-        ).Photo,
+        ).photo,
         data: "07/12/2023",
         hora: "13:00",
       },
@@ -92,15 +109,15 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 5)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 5
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 6)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 6
-        ).Photo,
+        ).photo,
         data: "07/12/2023",
         hora: "13:00",
       },
@@ -109,15 +126,15 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 7)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 7
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 8)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 8
-        ).Photo,
+        ).photo,
         data: "07/12/2023",
         hora: "13:00",
       },
@@ -126,16 +143,17 @@ export const useGamesStore = defineStore("games", {
         titulo: "Snooker Championship",
         descricao: "Final match of the season",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 8)
-          .Name,
+          .name,
         imageJogador1: usePlayersStore().allPlayers.find(
           (player) => player.id === 8
-        ).Photo,
+        ).photo,
         jogador2: usePlayersStore().allPlayers.find((player) => player.id === 9)
-          .Name,
+          .name,
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 9
-        ).Photo,
+        ).photo,
         hora: "13:00",
+        data: "07/12/2023",
       },
     ],
     selectedGame: null, // Para armazenar o jogo selecionado
