@@ -32,6 +32,7 @@
           </p>
           <canvas ref="player2Chart" width="200" height="200"></canvas>
           <img :src="getPlayerPhoto(game.jogador2)" alt="Player 2 Photo" />
+          <canvas ref="player1ChartPie" width="200" height="200"></canvas>
         </div>
       </div>
     </div>
@@ -50,12 +51,14 @@ export default {
     };
   },
   async created() {
+    
     const gamesStore = useGamesStore();
     const gameId = this.$route.params.id;
     this.game = await gamesStore.gameById(gameId);
     this.$nextTick(() => {
       this.createCharts();
     });
+    
   },
   methods: {
     getPlayerNationality(playerName) {
@@ -96,7 +99,7 @@ export default {
       {
         name: "Vermelho",
         value: "red",
-        count: playerTwoBalls.vermelha,
+        count: playerOneBalls.vermelha,
       },
       {
         name: "Azul",
@@ -166,11 +169,24 @@ export default {
         count: playerTwoBalls.castanha,
       },
     ]);
+    this.createPieChart("player1ChartPie", this.game.jogador1,this.game.jogador2, [
+  {
+    name: this.game.jogador1,
+    value: "red",
+    count: this.game.tempoplayer1,
+  },
+  {
+    name: this.game.jogador2,
+    value: "blue",
+    count: this.game.tempoplayer2,
+  },
+]);
   }
 
 
  
     },
+    
   
     createBallsChart(canvasId, playerName, colors) {
       const canvas = this.$refs[canvasId];
@@ -207,6 +223,42 @@ export default {
         },
       });
     },
+    
+    createPieChart(canvasId, player1Name, player2Name, colors) {
+  const canvas = this.$refs[canvasId];
+  if (!canvas) {
+    return;
+  }
+  const ctx = canvas.getContext("2d");
+  if (!ctx) {
+    return;
+  }
+
+  const data = {
+    labels: colors.map((color) => color.name),
+    datasets: [
+      {
+       label: "minutos",
+        data: colors.map((color) => color.count),
+        backgroundColor: colors.map((color) => color.value),
+      },
+    ],
+  };
+
+  new Chart(ctx, {
+    type: "pie",
+    data,
+    options: {
+      title: {
+        display: true,
+        text: `Ball Distribution for ${player1Name} and ${player2Name}`,
+      },
+      legend: {
+        display: false,
+      },
+    },
+  });
+}
   },
 };
 </script>
@@ -221,14 +273,14 @@ export default {
 
 .game-info {
   width: 60%;
-  text-align: center; /* Centraliza o texto na div */
+  text-align: center; 
 }
 
 .separator-line {
   width: 100%;
   height: 2px;
-  background-color: #007bff; /* cor azul */
-  margin: 15px 0; /* espaçamento acima e abaixo da linha */
+  background-color: #007bff; 
+  margin: 15px 0; 
 }
 
 .player-details {
@@ -246,5 +298,8 @@ export default {
   height: 120px;
   border-radius: 50%;
   margin-top: 10px;
+}
+.player1ChartPie {
+  transform: translate(-50%, -50%);
 }
 </style>
