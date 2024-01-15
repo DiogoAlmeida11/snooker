@@ -205,7 +205,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 7,
         titulo: "Snooker Championship",
-        descricao: "Oitavoos de final",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 8)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(

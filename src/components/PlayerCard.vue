@@ -48,8 +48,8 @@ export default {
   object-fit: cover;
 }
 .nation-image {
-  width: 80px;
-  height: 50px;
+  width: 70px;
+  height: 40px;
   margin-bottom: 10px; 
 }
 
