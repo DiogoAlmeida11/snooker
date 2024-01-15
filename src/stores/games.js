@@ -7,7 +7,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 1,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 1)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -40,7 +40,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 2,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 2)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -52,7 +52,7 @@ export const useGamesStore = defineStore("games", {
           (player) => player.id === 3
         ).photo,
         hora: "13:00",
-        data: "07/12/2023",
+        data: "08/12/2023",
         tempoplayer1: 90,
         tempoplayer2: 70,
         bolavermelhaPlayer1: 8,
@@ -73,7 +73,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 3,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 3)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -84,8 +84,8 @@ export const useGamesStore = defineStore("games", {
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 4
         ).photo,
-        data: "07/12/2023",
-        hora: "13:00",
+        data: "09/12/2023",
+        hora: "18:00",
         tempoplayer1: 78,
         tempoplayer2: 94,
         bolavermelhaPlayer1: 2,
@@ -106,7 +106,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 4,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 4)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -117,8 +117,8 @@ export const useGamesStore = defineStore("games", {
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 5
         ).photo,
-        data: "07/12/2023",
-        hora: "13:00",
+        data: "09/12/2023",
+        hora: "18:00",
         tempoplayer1: 82,
         tempoplayer2: 65,
         bolavermelhaPlayer1: 5,
@@ -139,7 +139,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 5,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 5)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -150,8 +150,8 @@ export const useGamesStore = defineStore("games", {
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 6
         ).photo,
-        data: "07/12/2023",
-        hora: "13:00",
+        data: "10/12/2023",
+        hora: "20:00",
         tempoplayer1: 93,
         tempoplayer2: 71,
         bolavermelhaPlayer1: 2,
@@ -172,7 +172,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 6,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 7)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -183,8 +183,8 @@ export const useGamesStore = defineStore("games", {
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 8
         ).photo,
-        data: "07/12/2023",
-        hora: "13:00",
+        data: "11/12/2023",
+        hora: "21:00",
         tempoplayer1: 87,
         tempoplayer2: 79,
         bolavermelhaPlayer1: 4,
@@ -205,7 +205,7 @@ export const useGamesStore = defineStore("games", {
       {
         id: 7,
         titulo: "Snooker Championship",
-        descricao: "Final match of the season",
+        descricao: "Oitavoos de final",
         jogador1: usePlayersStore().allPlayers.find((player) => player.id === 8)
           .name,
         imageJogador1: usePlayersStore().allPlayers.find(
@@ -216,8 +216,8 @@ export const useGamesStore = defineStore("games", {
         imageJogador2: usePlayersStore().allPlayers.find(
           (player) => player.id === 9
         ).photo,
-        hora: "13:00",
-        data: "07/12/2023",
+        hora: "21:30",
+        data: "12/12/2023",
         tempoplayer1: 98,
         tempoplayer2: 69,
         bolavermelhaPlayer1: 4,
