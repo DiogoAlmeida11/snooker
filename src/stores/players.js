@@ -16,7 +16,7 @@ export const usePlayersStore = defineStore('players', {
       {
         name: "Ronnie O'Sullivan",
         nationality: "../src/assets/inglaterra.png",
-        Idade: 48,
+        idade: 48,
         photo: "../src/assets/ron.jpg",
         firstSeasonAsPro: 1992,
         numRankingTitles: 40,
