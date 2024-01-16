@@ -1,7 +1,11 @@
 import fetchMock from "fetch-mock"
-import players from './mock/player'
+import players from './mock/playerMock'
+import news from './mock/newsMock'
+import games from './mockgamesMock'
 
 fetchMock.mock('http://localhost:4000/players', players)
+fetchMock.mock('http://localhost:4000/news', news)
+fetchMock.mock('http://localhost:4000/dashboard', games)
 
 /**
  * 

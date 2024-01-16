@@ -9,6 +9,7 @@
         <router-link v-if="isUser" :to="{ name: 'players' }" class="router-link">Jogadores</router-link>
         <router-link :to="{ name: 'news' }" class="router-link">Noticias</router-link>
         <router-link v-if="isUser" :to="{ name: 'calendar' }" class="router-link">Calendário</router-link>
+        <router-link v-if="isAdmin" :to="{ name: 'admin' }" class="router-link">Admin</router-link>
         <router-link v-if="!isUser" :to="{ name: 'login' }" class="router-link">Login</router-link>
       </div>
       <div class="user-info">

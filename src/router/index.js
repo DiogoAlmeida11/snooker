@@ -9,6 +9,8 @@ import RegisterView from '@/views/RegisterView.vue'
 import PlayerDetail from '@/views/PlayerDetail.vue'
 import GameDetails from '@/views/GameDetails.vue'
 import NewsDetails from '@/views/NewsDetails.vue'
+import Admin from '@/views/Admin.vue'
+import PageNotFound from '@/views/PageNotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,6 +67,16 @@ const router = createRouter({
       name: 'news-details',
       component: NewsDetails,
       props: true,
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin,
+    },
+    {
+      path: '/:patchMatch:(.*)*',
+      name: 'pagenotfound',
+      component: PageNotFound
     },
 
   ]

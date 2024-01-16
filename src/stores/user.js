@@ -12,6 +12,7 @@ export const useUserStore = defineStore('user', {
   getters: {
     getUser: (state) => state.user,
     isUser: (state) => state.isUserAuthenticated,
+    isAdmin: (state)=> state.user?.type=='admin',
   },
   actions: {
     login(username, password) {
