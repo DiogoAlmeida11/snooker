@@ -5,7 +5,7 @@ export const usePlayersStore = defineStore('players', {
     players: [
       {
         name: "Neil Robertson",
-        nationality: "Australiano",
+        nationality: "../src/assets/australia.png",
         idade: 41,
         photo: "../src/assets/neil.jpg",
         firstSeasonAsPro: 1998,
@@ -15,8 +15,8 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Ronnie O'Sullivan",
-        nationality: "Inglês",
-        Idade: 48,
+        nationality: "../src/assets/inglaterra.png",
+        idade: 48,
         photo: "../src/assets/ron.jpg",
         firstSeasonAsPro: 1992,
         numRankingTitles: 40,
@@ -25,7 +25,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Luca Brecel",
-        nationality: "Belga",
+        nationality: "../src/assets/belgica.png",
         idade: 28,
         photo: "../src/assets/luca.jpg",
         firstSeasonAsPro: 2011,
@@ -35,7 +35,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Mark Selby",
-        nationality: "Inglês",
+        nationality: "../src/assets/inglaterra.png",
         idade: 40,
         photo: "../src/assets/selby.jpg",
         firstSeasonAsPro: 1999,
@@ -45,7 +45,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Shaun Murphy",
-        nationality: "Inglês",
+        nationality: "../src/assets/inglaterra.png",
         idade: 41,
         photo: "../src/assets/shaun.jpg",
         firstSeasonAsPro: 1998,
@@ -55,7 +55,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Mark Allen",
-        nationality: "Irlandês",
+        nationality: "../src/assets/irlanda.png",
         idade: 37,
         photo: "../src/assets/Allen.jpg",
         firstSeasonAsPro: 2005,
@@ -65,7 +65,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Mark Williams",
-        nationality: "Galês",
+        nationality: "../src/assets/gales.png",
         idade: 40,
         photo: "../src/assets/mark.jpg",
         firstSeasonAsPro: 1992,
@@ -75,7 +75,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Judd Trump",
-        nationality: "Inglês",
+        nationality: "../src/assets/inglaterra.png",
         Idade: 34,
         photo: "../src/assets/trump.jpg",
         firstSeasonAsPro: 2005,
@@ -85,7 +85,7 @@ export const usePlayersStore = defineStore('players', {
       },
       {
         name: "Kyren Wilson",
-        nationality: "Inglês",
+        nationality: "../src/assets/inglaterra.png",
         idade: 32,
         photo: "../src/assets/wilson.jpg",
         firstSeasonAsPro: 2010,

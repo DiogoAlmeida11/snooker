@@ -4,7 +4,7 @@
     <img :src="player.photo" alt="Player Photo" class="player-image" />
     <div class="player-info">
       <h3>{{ player.name }}</h3>
-      <p>{{ player.nationality }}</p>
+      <img :src="player.nationality" alt="Nationality Photo" class="nation-image" />
       <p>Ranking: {{ player.ranking }}</p>
     </div>
   </div>
@@ -23,7 +23,6 @@ export default {
 };
 </script>
 
-<!-- src/components/PlayerCard.vue -->
 <style scoped>
 .player-card {
   border: 1px solid #ddd;
@@ -35,19 +34,23 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 200px; /* Defina a largura desejada para cada card */
+  width: 200px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   text-align: center; 
+  height: 320px;
 }
 
 .player-image {
   width: 50px;
   height: 50px;
-  margin-bottom: 10px; 
-  margin-top: 10px; 
   border-radius: 50%; 
   object-fit: cover;
+}
+.nation-image {
+  width: 70px;
+  height: 40px;
+  margin-bottom: 10px; 
 }
 
 .player-info {

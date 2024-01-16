@@ -67,7 +67,7 @@
   }
   
   .table {
-    width: 80%;
+    width: 100%;
     border: 1px solid #ddd;
     border-collapse: collapse;
   }
