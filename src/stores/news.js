@@ -73,5 +73,8 @@ export const useNewsStore = defineStore('news', {
               throw Error("Esta notícia já foi publicada.");
             }
           },
+          remove(id){
+            this.news = this.news.filter((report) => report.id != id)
+          },
     }
 });

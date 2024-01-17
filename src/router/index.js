@@ -11,6 +11,7 @@ import GameDetails from '@/views/GameDetails.vue'
 import NewsDetails from '@/views/NewsDetails.vue'
 import Admin from '@/views/Admin.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
+import { useUserStore } from "@/stores/user";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -94,7 +95,7 @@ const router = createRouter({
 router.beforeEach((to, from) => {
   if (to.meta.needsAuth && !useUserStore().isUser) {
     return {
-      path: "/login",
+      path: "/",
       query: { redirect: to.fullPath },
     };
   }

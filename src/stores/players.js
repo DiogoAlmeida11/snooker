@@ -114,7 +114,10 @@ export const usePlayersStore = defineStore('players', {
       } else {
         throw Error("Este jogador já existe.");
       }
-    }
+    },
+    remove(id){
+      this.players = this.players.filter((player) => player.id != id)
+    },
     },
   });
 
