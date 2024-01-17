@@ -23,17 +23,20 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: Dashboard
+      component: Dashboard,
+      meta: {needsAuth: true},
     },
     {
       path: '/calendar',
       name: 'calendar',
-      component: Calendar
+      component: Calendar,
+      meta: {needsAuth: true},
     },
     {
       path: '/players',
       name: 'players',
-      component: Players
+      component: Players,
+      meta: {needsAuth: true},
     },
     {
       path: '/news',
@@ -53,13 +56,15 @@ const router = createRouter({
     { path: '/player/:id', 
       name: 'player', 
       component: PlayerDetail, 
-      props: true 
+      props: true,
+      meta: {needsAuth: true},
     },
     {
       path: '/game/:id',
       name: 'gameDetails',
       component: GameDetails,
-      props: true 
+      props: true,
+      meta: {needsAuth: true},
 
     },
     {
@@ -72,6 +77,7 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: Admin,
+      meta: {needsAuth: true},
     },
     {
       path: '/:patchMatch:(.*)*',
@@ -80,7 +86,18 @@ const router = createRouter({
     },
 
   ]
+
+  
 })
 
+
+router.beforeEach((to, from) => {
+  if (to.meta.needsAuth && !useUserStore().isUser) {
+    return {
+      path: "/login",
+      query: { redirect: to.fullPath },
+    };
+  }
+});
 export default router
 

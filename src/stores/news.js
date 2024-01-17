@@ -60,5 +60,18 @@ export const useNewsStore = defineStore('news', {
       state.news.filter((newsItem) =>
         newsItem.titulo.toLowerCase().includes(title.toLowerCase())
       ),
+    },
+    actions: {
+        add(titulo, descricao, imagem, noticia) {
+            if (!this.news.some((report) => report.title == title || report.noticia==noticia)) {
+              const id = this.news[this.news.length - 1].id + 1;
+              const today = new Date()
+              const data = today.getDate()+'/' + today.getMonth()+'/'+ today.getFullYear()
+              const newReport = {id, titulo, descricao, imagem, noticia, data};
+              this.news.push(newReport);
+            } else {
+              throw Error("Esta notícia já foi publicada.");
+            }
+          },
     }
 });

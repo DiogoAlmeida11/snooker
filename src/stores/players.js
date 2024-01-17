@@ -106,8 +106,17 @@ export const usePlayersStore = defineStore('players', {
     sortPlayersByRanking() {
       this.players.sort((a, b) => a.ranking - b.ranking);
     },
-  },
-});
+    add(name, nationality, idade, photo, firstSeasonAsPro, numRankingTitles, ranking) {
+      if (!this.players.some((player) => player.name == name)) {
+        const id = this.players[this.players.length - 1].id + 1;
+        const newPlayer = {id, name, nationality, idade, photo, firstSeasonAsPro, numRankingTitles, ranking};
+        this.players.push(newPlayer);
+      } else {
+        throw Error("Este jogador já existe.");
+      }
+    }
+    },
+  });
 
 // tarefa filipe para amanhã
 // - flag do botao de sort, pode ser por Ranking ou A-Z

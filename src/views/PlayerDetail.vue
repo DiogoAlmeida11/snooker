@@ -9,6 +9,7 @@
         <p>Primeira Temporada como Profissional: {{ player.firstSeasonAsPro }}</p>
         <p>Número de Títulos de Ranking: {{ player.numRankingTitles }}</p>
         <p>Ranking Atual: {{ player.ranking }}</p>
+        <p><button @click="$router.go(-1)">Voltar</button></p>
       </div>
     </div>
   </template>
