@@ -32,6 +32,7 @@
           </p>
           <canvas ref="player2Chart" width="200" height="200"></canvas>
           <img :src="getPlayerPhoto(game.jogador2)" alt="Player 2 Photo" />
+          <h3>Tempo na mesa</h3>
           <canvas ref="player1ChartPie" width="200" height="200"></canvas>
         </div>
       </div>
