@@ -17,7 +17,7 @@
           <p><strong>Name:</strong> {{ game.jogador1 }}</p>
           <p>
             <strong>Nationality:</strong>
-            {{ getPlayerNationality(game.jogador1) }}
+            <img :src="getPlayerNationalityImage(game.jogador1)" alt="Player 1 Nationality" class="nationality" />
           </p>
           <canvas ref="player1Chart" width="200" height="200"></canvas>
           <img :src="getPlayerPhoto(game.jogador1)" alt="Player 1 Photo" />
@@ -28,15 +28,50 @@
           <p><strong>Name:</strong> {{ game.jogador2 }}</p>
           <p>
             <strong>Nationality:</strong>
-            {{ getPlayerNationality(game.jogador2) }}
+            <img :src="getPlayerNationalityImage(game.jogador2)" alt="Player 2 Nationality" class="nationality" />
           </p>
           <canvas ref="player2Chart" width="200" height="200"></canvas>
           <img :src="getPlayerPhoto(game.jogador2)" alt="Player 2 Photo" />
+          <h3>Tempo na mesa</h3>
           <canvas ref="player1ChartPie" width="200" height="200"></canvas>
         </div>
       </div>
-    </div>
+
+      <hr class="separator-line" />
+
+      <div class="breaks-table">
+        <h3>Breaks</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Break</th>
+              <th colspan="3">{{ game.jogador1 }}</th>
+              <th colspan="3">{{ game.jogador2 }}</th>
+            </tr>
+            <tr>
+              <th></th>
+              <th>Pontos</th>
+              <th>Break 50+</th>
+              <th></th>
+              <th>Pontos</th>
+              <th>Break 50+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(breakInfo, index) in game.breaks" :key="index">
+              <td>{{ index + 1 }}</td>
+              <td :class="{ 'highlight-cell': winningPlayerBreaks[index] === 'player1' }">{{ breakInfo.player1Points || 'N/A' }}</td>
+              <td>{{ breakInfo.has50Plus ? 'Sim' : 'Não' }}</td>
+              <td></td>
+              <td :class="{ 'highlight-cell': winningPlayerBreaks[index] === 'player2' }">{{ breakInfo.player2Points || 'N/A' }}</td>
+              <td>{{ breakInfo.has50Plus ? 'Sim' : 'Não' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -50,18 +85,31 @@ export default {
       game: null,
     };
   },
+  computed: {
+    winningPlayerBreaks() {
+      const winningPlayerBreaks = [];
+      for (const breakInfo of this.game.breaks) {
+        if (breakInfo.player1Points > breakInfo.player2Points) {
+          winningPlayerBreaks.push('player1');
+        } else if (breakInfo.player1Points < breakInfo.player2Points) {
+          winningPlayerBreaks.push('player2');
+        } else {
+          winningPlayerBreaks.push(null);
+        }
+      }
+      return winningPlayerBreaks;
+    },
+  },
   async created() {
-    
     const gamesStore = useGamesStore();
     const gameId = this.$route.params.id;
     this.game = await gamesStore.gameById(gameId);
     this.$nextTick(() => {
       this.createCharts();
     });
-    
   },
   methods: {
-    getPlayerNationality(playerName) {
+    getPlayerNationalityImage(playerName) {
       const player = usePlayersStore().allPlayers.find(
         (player) => player.name === playerName
       );
@@ -301,5 +349,29 @@ export default {
 }
 .player1ChartPie {
   transform: translate(-50%, -50%);
+}
+.breaks-table {
+  margin-top: 20px;
+  width: 60%;
+}
+
+.breaks-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.breaks-table th, .breaks-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.breaks-table th {
+  background-color: #007bff;
+  color: white;
+}
+.highlight-cell {
+  background-color: #ffff66; 
 }
 </style>
