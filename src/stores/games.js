@@ -1,5 +1,6 @@
 import { usePlayersStore } from "./players"; // Replace with the correct path to your players store
 import { defineStore } from "pinia";
+const generateRandomPoints = () => Math.floor(Math.random() * 100) + 1;
 
 export const useGamesStore = defineStore("games", {
   state: () => ({
@@ -36,6 +37,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 1,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 1,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 2,
@@ -69,6 +88,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 5,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 1,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 3,
@@ -102,6 +139,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 4,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 5,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 4,
@@ -135,6 +190,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 5,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 5,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 5,
@@ -168,6 +241,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 4,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 5,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 6,
@@ -201,6 +292,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 1,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 4,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
       {
         id: 7,
@@ -234,6 +343,24 @@ export const useGamesStore = defineStore("games", {
         bolaverdePlayer2: 3,
         bolacastanhaPlayer2: 1,
         bolapretaPlayer2: 1,
+        breaks: [
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          {
+            player1Points: generateRandomPoints(),
+            player2Points: generateRandomPoints(),
+            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+          },
+          
+        ],
       },
     ],
     selectedGame: null, // Para armazenar o jogo selecionado
