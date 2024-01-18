@@ -41,19 +41,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -92,19 +92,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -143,19 +143,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -194,19 +194,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -245,19 +245,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -296,19 +296,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
       {
@@ -347,19 +347,19 @@ export const useGamesStore = defineStore("games", {
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
           },
+
           {
             player1Points: generateRandomPoints(),
             player2Points: generateRandomPoints(),
-            has50Plus: generateRandomPoints() >= 50 || generateRandomPoints() >= 50,
+
           },
-          
+
         ],
       },
     ],

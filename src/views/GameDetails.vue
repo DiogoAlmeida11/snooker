@@ -61,10 +61,10 @@
             <tr v-for="(breakInfo, index) in game.breaks" :key="index">
               <td>{{ index + 1 }}</td>
               <td :class="{ 'highlight-cell': winningPlayerBreaks[index] === 'player1' }">{{ breakInfo.player1Points || 'N/A' }}</td>
-              <td>{{ breakInfo.has50Plus ? 'Sim' : 'Não' }}</td>
+              <td>{{ breakInfo.player1Points>50 ? 'Sim' : 'Não' }}</td>
               <td></td>
               <td :class="{ 'highlight-cell': winningPlayerBreaks[index] === 'player2' }">{{ breakInfo.player2Points || 'N/A' }}</td>
-              <td>{{ breakInfo.has50Plus ? 'Sim' : 'Não' }}</td>
+              <td>{{ breakInfo.player2Points>50  ? 'Sim' : 'Não' }}</td>
             </tr>
           </tbody>
         </table>
