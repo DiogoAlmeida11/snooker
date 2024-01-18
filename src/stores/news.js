@@ -76,5 +76,7 @@ export const useNewsStore = defineStore('news', {
           remove(id){
             this.news = this.news.filter((report) => report.id != id)
           },
-    }
+    },
+    persist: true,
+    
 });

@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div class="content">
-      <h1>Dashboard Principal</h1>
-      <p>Estatísticas ao vivo e classificações de jogadores.</p>
-    </div>
     <Dashboard class="dashboard" />
   </div>
 </template>

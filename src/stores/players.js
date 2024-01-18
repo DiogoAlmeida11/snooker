@@ -115,15 +115,13 @@ export const usePlayersStore = defineStore('players', {
         throw Error("Este jogador já existe.");
       }
     },
-    remove(id){
+    async remove(id){
       this.players = this.players.filter((player) => player.id != id)
     },
     },
+    persist: true,
   });
 
-// tarefa filipe para amanhã
-// - flag do botao de sort, pode ser por Ranking ou A-Z
-// - impossível de ver as paginas de dashboard e players quando nao se está logado 
 
 /* import * as api from '../api/api'
 
