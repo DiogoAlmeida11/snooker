@@ -115,8 +115,8 @@ export const usePlayersStore = defineStore('players', {
         throw Error("Este jogador já existe.");
       }
     },
-    async remove(id){
-      this.players = this.players.filter((player) => player.id != id)
+    remove(id) {
+      this.players = this.players.filter((player) => player.id !== id);
     },
     },
     persist: true,

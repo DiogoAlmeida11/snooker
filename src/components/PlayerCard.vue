@@ -2,7 +2,7 @@
 <template>
   <div class="player-card" @click="redirectToPlayerPage">
     <div>
-        <button v-if="isAdmin" @click="remove" class="remove-button"> Remover </button>
+        <button v-if="isAdmin" @click.stop.prevent="remove(player.id)" class="remove-button"> Remover </button>
     </div> 
     <img :src="player.photo" alt="Player Photo" class="player-image" />
     <div class="player-info">

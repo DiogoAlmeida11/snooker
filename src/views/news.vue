@@ -8,6 +8,9 @@
       <div v-for="(group, index) in chunkArray(flatNews, 3)" :key="index" class="news-row">
         <div v-for="(item, innerIndex) in group" :key="innerIndex" class="news-card">
           <router-link :to="`/news/${item.id}`" class="news-link">
+            <div>
+        <button v-if="isAdmin" @click.stop.prevent="remove(item.id)" class="remove-button"> Remover </button>
+    </div> 
             <img :src="item.imagem" alt="Imagem da Notícia" class="news-image" />
             <div class="news-details">
               <h2>{{ item.titulo }}</h2>
@@ -26,12 +29,14 @@
 
 <script>
 import { useNewsStore } from '@/stores/news';
+import {useUserStore} from "@/stores/user"
 import { ref, computed } from 'vue';
 
 export default {
   name: 'News',
   setup() {
     const newsStore = useNewsStore();
+    
 
     const searchQuery = ref('');
 
@@ -53,7 +58,22 @@ export default {
       searchQuery,
       flatNews,
       chunkArray,
+      userStore: useUserStore(),
+      newsStore
     };
+    
+  },
+  methods: {
+    async remove(id) {
+      if (confirm("Deseja mesmo remover esta notícia?")) {
+        await this.newsStore.remove(id);
+      }
+    },
+  },
+  computed: {
+    isAdmin() {
+      return this.userStore.user?.type=='admin'
+    }
   },
 };
 </script>
@@ -116,5 +136,13 @@ export default {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+.remove-button {
+  border: 0px;
+  color: whitesmoke;
+  border-radius: 20%;
+  overflow: hidden;
+  background-color: red;
+  margin-bottom: 20px;
 }
 </style>
