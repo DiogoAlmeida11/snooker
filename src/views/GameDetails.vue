@@ -3,20 +3,18 @@
     <h2>Game Details</h2>
     <div v-if="game" class="game-details-container">
       <div class="game-info">
-        <p><strong>Title:</strong> {{ game.titulo }}</p>
-        <p><strong>Description:</strong> {{ game.descricao }}</p>
-        <p><strong>Date:</strong> {{ game.data }}</p>
-        <p><strong>Time:</strong> {{ game.hora }}</p>
+        <p><strong>{{ game.titulo }}</strong></p>
+        <p><strong>{{ game.descricao }}</strong></p>
+        <p><strong>{{ game.data }}</strong></p>
+        <p><strong>{{ game.hora }}</strong></p>
       </div>
 
       <hr class="separator-line" />
 
       <div class="player-details">
         <div class="player">
-          <h3>Player 1</h3>
-          <p><strong>Name:</strong> {{ game.jogador1 }}</p>
+          <p><strong>{{ game.jogador1 }}</strong></p>
           <p>
-            <strong>Nationality:</strong>
             <img :src="getPlayerNationalityImage(game.jogador1)" alt="Player 1 Nationality" class="nationality" />
           </p>
           <canvas ref="player1Chart" width="200" height="200"></canvas>
@@ -24,10 +22,8 @@
         </div>
 
         <div class="player">
-          <h3>Player 2</h3>
-          <p><strong>Name:</strong> {{ game.jogador2 }}</p>
+          <p><strong>{{ game.jogador2 }}</strong></p>
           <p>
-            <strong>Nationality:</strong>
             <img :src="getPlayerNationalityImage(game.jogador2)" alt="Player 2 Nationality" class="nationality" />
           </p>
           <canvas ref="player2Chart" width="200" height="200"></canvas>
