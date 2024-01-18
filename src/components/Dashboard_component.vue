@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard">
-      <h2>Snooker Games Dashboard</h2>
+      <h2>Snooker Dashboard</h2>
       <div class="game-cards">
         <game-card v-for="(game, index) in games" :key="index" v-bind="game" />
       </div>

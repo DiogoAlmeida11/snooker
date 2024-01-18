@@ -1,12 +1,10 @@
 <template>
     <div>
-      <h1>Detalhes do Jogador</h1>
       <div v-if="player">
         <p>
           <h2>{{ player.name }}</h2>
           <img :src="player.nationality" alt="Nationality Photo" class="nation-image" />
         </p>
-        
         <img :src="player.photo" alt="Player Photo" />
         <p>Idade: {{ player.idade }}</p>
         <p>Primeira Temporada como Profissional: {{ player.firstSeasonAsPro }}</p>
