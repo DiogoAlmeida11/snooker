@@ -2,9 +2,12 @@
     <div>
       <h1>Detalhes do Jogador</h1>
       <div v-if="player">
-        <h2>{{ player.name }}</h2>
+        <p>
+          <h2>{{ player.name }}</h2>
+          <img :src="player.nationality" alt="Nationality Photo" class="nation-image" />
+        </p>
+        
         <img :src="player.photo" alt="Player Photo" />
-        <p>Nacionalidade: {{ player.nationality }}</p>
         <p>Idade: {{ player.idade }}</p>
         <p>Primeira Temporada como Profissional: {{ player.firstSeasonAsPro }}</p>
         <p>Número de Títulos de Ranking: {{ player.numRankingTitles }}</p>
@@ -37,9 +40,9 @@ export default {
   object-fit: cover;
 }
 .nation-image {
-  width: 80px;
-  height: 50px;
-  margin-bottom: 10px;
+  width: 50px;
+  height: 30px;
+  margin-bottom: 0px;
 }
 </style>
   
